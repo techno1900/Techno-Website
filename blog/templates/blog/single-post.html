@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+    <!-- Blog Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <!-- Blog Detail Start -->
+                    <div class="mb-5">
+                        <img class="img-fluid w-100 rounded mb-5" src="{{post.post_image.url}}" alt="">
+                        <h1 class="mb-4">{{post.title}}</h1>
+                        <p> {{post.body | safe }}</p>
+
+
+                        <iframe width="850" height="530" src="{{post.video}}" title="Would YOU Trust Him? Dubai&#39;s Beggar Scammers EXPOSED" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <!-- Blog Detail End -->
+    
+                    <!-- Comment List Start -->
+ 
+                    <!-- Comment List End -->
+    
+                    <!-- Comment Form Start -->
+
+                    <!-- Comment Form End -->
+                </div>
+
+    
+                <!-- Sidebar Start -->
+                <div class="col-lg-4">
+    
+                    <!-- Category Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Categories</h3>
+                        </div>
+                        <div class="link-animated d-flex flex-column justify-content-start">
+
+                            {% for link in links %}
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="{% url 'filter_by_category' link.category_name%}"><i class="bi bi-arrow-right me-2"></i>{{link}}</a>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    <!-- Category End -->
+    
+                    <!-- Recent Post Start -->
+
+                    <!-- Recent Post End -->
+    
+                    <!-- Image Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <img src="img/blog-1.jpg" alt="" class="img-fluid rounded">
+                    </div>
+                    <!-- Image End -->
+    
+                    <!-- Tags Start -->
+
+                    <!-- Tags End -->
+    
+                    <!-- Plain Text Start -->
+              
+                    <!-- Plain Text End -->
+                </div>
+                <!-- Sidebar End -->
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+{% endblock content %}
